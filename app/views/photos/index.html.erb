@@ -1,7 +1,10 @@
 <!-- search form -->
-<form action="" method="get">
-  <div>
-    <input type="text" name="q" placeholder="Search Flickr photos..." />
-    <button type='submit' name='seach'>Search</button>
+<%= form_tag root_path, method: :get, html: {class: 'form-horizontal'} do %>
+  <h1 class="text-center">Search Flickr Photos</h1>
+  <div class="input-group input-group-lg">
+    <input type="text" name="q" placeholder="tags keywords names whatever in you head ..." class="form-control input-lg" />
+    <span class="input-group-btn">
+      <button type='submit' name='seach' class="btn btn-default btn-lg btn-search"><i class="fa fa-search"></i></button>
+    </span>
   </div>
-</form><!-- /.search form -->
+<% end %><!-- /.search form -->
