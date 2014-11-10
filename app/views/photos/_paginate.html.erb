@@ -1,0 +1,37 @@
+<ul class="pagination">
+  <li class="<%= 'disabled' if @search_result.page == 1 %>">
+    <%= link_to root_path(q: @search_result.query, page: 1) do %>
+      <i class="glyphicon glyphicon-step-backward"></i>
+    <% end %>
+  </li>
+
+  <% if @search_result.pages <= 5 %>
+    <% (1..@search_result.pages).each do |page_index| %>
+      <%= render partial: 'pager', object: page_index %>
+    <% end %>
+  <% else %>
+    <% if @search_result.page - 2 < 1 %>
+      <% (1..5).each do |page_index| %>
+        <%= render partial: 'pager', object: page_index %>
+      <% end %>
+      <%= render 'pager_gap_right' %>
+    <% elsif @search_result.page + 2 > @search_result.pages %>
+      <%= render 'pager_gap_left' %>
+      <% ((@search_result.pages - 4)..@search_result.pages).each do |page_index| %>
+        <%= render partial: 'pager', object: page_index %>
+      <% end %>
+    <% else %>
+      <%= render 'pager_gap_left' %>
+      <% ((@search_result.page - 2)..(@search_result.page + 2)).each do |page_index| %>
+        <%= render partial: 'pager', object: page_index %>
+      <% end %>
+      <%= render 'pager_gap_right' %>
+    <% end %>
+  <% end %>
+
+  <li class="<%= 'disabled' if @search_result.page == @search_result.pages %>">
+    <%= link_to root_path(q: @search_result.query, page: @search_result.pages) do %>
+      <i class="glyphicon glyphicon-step-forward"></i>
+    <% end %>
+  </li>
+</ul>

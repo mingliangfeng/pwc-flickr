@@ -2,7 +2,7 @@ class FlickrProxy
 
   # sort: date-posted-asc, date-posted-desc, date-taken-asc, date-taken-desc, interestingness-desc,
   #       interestingness-asc, relevance-asc, relevance-desc
-  DEFAULT_SEARCH_CRITERIAS = { per_page: 20 }
+  DEFAULT_SEARCH_CRITERIAS = { per_page: 18 }
 
   def self.flickr_search(query, page)
     # TODO: implementing searching by tags, flickr.photos.search tags: 'asian,food'

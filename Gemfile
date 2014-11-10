@@ -45,4 +45,3 @@ end
 gem 'less-rails'
 
 gem 'flickraw-cached'
-gem 'kaminari'

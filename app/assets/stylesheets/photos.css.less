@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
 
+.result-header {
+  h2 { float: left; }
+  ul.pagination {
+    float: right;
+    li {
+      a { color: #333; }
+      &.disabled a { color: #999999; }
+    }
+  }
+}
 .search-results {
   .img-thumbnail {
     margin: 0 10px 10px 0;

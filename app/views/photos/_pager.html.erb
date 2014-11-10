@@ -1,0 +1,3 @@
+<li class="<%= 'disabled' if @search_result.page == pager %>">
+  <%= link_to pager, root_path(q: @search_result.query, page: pager) %>
+</li>

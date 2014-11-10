@@ -4,13 +4,16 @@
   <div class="input-group input-group-lg">
     <input type="text" name="q" placeholder="title, description or tags ..." class="form-control input-lg" />
     <span class="input-group-btn">
-      <button type='submit' name='seach' class="btn btn-default btn-lg btn-search"><i class="fa fa-search"></i></button>
+      <button type='submit' name='seach' class="btn btn-default btn-lg btn-search"><i class="glyphicon glyphicon-search"></i></button>
     </span>
   </div>
 <% end %><!-- /.search form -->
 
 <% if @search_result.present? %>
-<h2>Search results for "<%= @search_result.query %>"</h2>
+<div class="result-header clearfix">
+  <h2>Search results for "<%= @search_result.query %>"</h2>
+  <%= render "paginate" %>
+</div>
 <div class="search-results">
   <% @search_result.photos.each do |photo| %>
   <a href="<%= photo.url_big %>" data-lightbox="search_result">

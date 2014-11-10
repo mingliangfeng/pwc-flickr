@@ -10,7 +10,7 @@ class Photo
 
   def self.search(query, page = 1)
     response_list = FlickrProxy.flickr_search(query, page)
-    search_result = SearchResult.new query, response_list.page, response_list.pages, response_list.total
+    search_result = SearchResult.new query, response_list.page.to_i, response_list.pages.to_i, response_list.total.to_i
     photos = response_list.map {|response| Photo.new(response.id, response.secret) }
     photos.each {|photo| photo.fetch_info }
     search_result.photos = photos
