@@ -39,9 +39,10 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-mocks'
+  gem 'webmock'
 end
 
 gem 'less-rails'
 
-gem 'flickraw'
+gem 'flickraw-cached'
 gem 'kaminari'

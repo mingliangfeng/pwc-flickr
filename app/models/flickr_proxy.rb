@@ -13,4 +13,12 @@ class FlickrProxy
     flickr.photos.getInfo photo_id: id, secret: secret
   end
 
+  def self.getThumbnailUrl(photo_info)
+    FlickRaw.url_q(photo_info)
+  end
+
+  def self.getBigPhotoUrl(photo_info)
+    FlickRaw.url_b(photo_info)
+  end
+
 end
