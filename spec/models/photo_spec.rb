@@ -8,7 +8,7 @@ RSpec.describe Photo do
     it 'General search should return a list of Photo instances' do
       search_result = Photo.search('query text')
       expect(search_result.query).to eq('query text')
-      expect(search_result.total).to eq('237968441')
+      expect(search_result.total).to eq(237968441)
       expect(search_result.photos[0].id).to eq('15753706985')
     end
 
