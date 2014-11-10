@@ -42,3 +42,6 @@ group :development, :test do
 end
 
 gem 'less-rails'
+
+gem 'flickraw'
+gem 'kaminari'
