@@ -8,3 +8,14 @@
     </span>
   </div>
 <% end %><!-- /.search form -->
+
+<% if @search_result.present? %>
+<h2>Search results for "<%= @search_result.query %>"</h2>
+<div class="search-results">
+  <% @search_result.photos.each do |photo| %>
+  <a href="<%= photo.url_big %>" data-lightbox="search_result">
+    <img src="<%= photo.url_thumbnail %>" class="img-thumbnail img-responsive" alt="Responsive image">
+  </a>
+  <% end %>
+</div>
+<% end %>

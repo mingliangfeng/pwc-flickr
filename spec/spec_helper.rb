@@ -77,4 +77,17 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 =end
+  config.before(:each) do
+    stub_request(:post, "https://api.flickr.com/services/rest/").
+      with(:body => hash_including({"method"=>"flickr.photos.search"})).to_return(
+        :body => File.new(File.expand_path('../data-sample/flickr_search_a.json', __FILE__)),
+        :status => 200
+      )
+
+    stub_request(:post, "https://api.flickr.com/services/rest/").
+      with(:body => hash_including({"method"=>"flickr.photos.getInfo"})).to_return(
+        :body => File.new(File.expand_path('../data-sample/flickr_getinfo.json', __FILE__)),
+        :status => 200
+      )
+  end
 end

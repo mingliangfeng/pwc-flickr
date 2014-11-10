@@ -15,6 +15,13 @@ RSpec.describe Photo do
       expect(search_result.photos[0].title).not_to be_nil
     end
 
+    it 'Test fetch info' do
+      photo = Photo.new 15753706985, '4e74167847'
+      expect(photo.title).to be_nil
+      photo.fetch_info
+      expect(photo.title).not_to be_nil
+    end
+
     after(:each) do
       WebMock.disable_net_connect!
     end
