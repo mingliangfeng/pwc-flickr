@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.org/mingliangfeng/pwc-flickr.png?branch=master)](https://travis-ci.org/mingliangfeng/pwc-flickr)
+
 #### Flickr Photos Search Rails Application.
 
 * Ruby version: `ruby 2.1.2p95`
