@@ -21,11 +21,11 @@
         <%= render partial: 'pager', object: page_index %>
       <% end %>
     <% else %>
-      <%= render 'pager_gap_left' %>
+      <%= render 'pager_gap_left' if @search_result.page - 2 > 1 %>
       <% ((@search_result.page - 2)..(@search_result.page + 2)).each do |page_index| %>
         <%= render partial: 'pager', object: page_index %>
       <% end %>
-      <%= render 'pager_gap_right' %>
+      <%= render 'pager_gap_right' if @search_result.page + 2 < @search_result.pages %>
     <% end %>
   <% end %>
 
