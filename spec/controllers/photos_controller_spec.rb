@@ -10,12 +10,16 @@ RSpec.describe PhotosController, :type => :controller do
       expect(assigns(:search_result)).to be_nil
     end
 
-    it "returns http success with search result" do
-      get :index, {q: "query"}
-      expect(response).to be_success
-      expect(assigns(:search_result)).not_to be_nil
-    end
+  end
 
+  describe 'GET search' do
+    it "returns http success with search result" do
+      get :search, {q: "query", format: :json}
+      expect(response).to be_success
+      parsed_body = JSON.parse(response.body)
+
+      expect(parsed_body['pages']).to be >= 0
+    end
   end
 
 end

@@ -46,6 +46,11 @@ gem 'less-rails'
 
 gem 'flickraw-cached'
 
+gem 'execjs'
+
+gem "react-rails", :git => "git://github.com/reactjs/react-rails.git"
+gem 'sprockets-coffee-react'
+
 gem 'rails_12factor', group: :production
 
 ruby "2.1.2"
