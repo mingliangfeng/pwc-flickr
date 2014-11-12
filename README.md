@@ -22,7 +22,7 @@ This app is tested using RSpec. For testing model **Photo**, two sets of specs a
 * **Live specs**: Flickr API request will hit real Flickr end point and fetch real data; these specs are time consuming, but should run before releasing to production server to make sure live search is working. Here is using Flickr search libraray [flickraw](https://github.com/hanklords/flickraw)
 
 ## TODOs
-1. Change to async photo searching as the current one seems time consuming;
+1. <del>Change to async photo searching as the current one seems time consuming;</del>
 2. Add integration test by using capybara;
 3. Enhance searching by adding **tag** search;
 4. Display more inforation for photo like description, tags, etc.
