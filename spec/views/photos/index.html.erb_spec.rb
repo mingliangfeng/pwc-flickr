@@ -7,10 +7,4 @@ RSpec.describe "photos/index.html.erb", :type => :view do
     expect(rendered).to match /search/
   end
 
-  it "should display photos when get result" do
-    assign:search_result, Photo::SearchResult.new("query text", 1, 10, 200, [])
-    render
-    expect(rendered).to match /Search results for "query text"/
-  end
-
 end
