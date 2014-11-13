@@ -40,6 +40,9 @@ group :test do
   gem 'rspec-rails'
   gem 'rspec-mocks'
   gem 'webmock'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end
 
 gem 'less-rails'
