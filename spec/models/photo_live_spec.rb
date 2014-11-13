@@ -23,7 +23,7 @@ RSpec.describe Photo do
     end
 
     after(:each) do
-      WebMock.disable_net_connect!
+      WebMock.disable_net_connect!(:allow_localhost => true, :allow => "127.0.0.1")
     end
 
   end
