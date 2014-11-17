@@ -1,2 +1,0 @@
-<% right_gap_pager = @search_result.page + 5 < @search_result.pages ? @search_result.page + 5 : @search_result.pages %>
-<li><%= link_to "..", root_path(q: @search_result.query, page: right_gap_pager) %></li>
