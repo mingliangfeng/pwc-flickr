@@ -2,6 +2,7 @@
 
 @Paginate = React.createClass
   render: ->
+    return <div></div> unless @props.pages > 0
     paginate = @
     pagers = []
     if @props.pages <= 5
