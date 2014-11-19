@@ -43,8 +43,6 @@ RSpec.describe "Photo Search", :type => :feature, js: true do
   end
 
   it "search pagination" do
-
-
     visit '/'
 
     fill_in 'q', :with => 'test'

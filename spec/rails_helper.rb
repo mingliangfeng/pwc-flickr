@@ -5,6 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'webmock/rspec'
 require 'capybara/rspec'
+require 'coveralls'
+Coveralls.wear!
 
 Capybara.default_wait_time = 5
 WebMock.disable_net_connect!(:allow_localhost => true, :allow => "127.0.0.1")

@@ -44,6 +44,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'launchy'
+  gem 'coveralls', require: false
 end
 
 gem 'less-rails'
