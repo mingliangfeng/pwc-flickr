@@ -39,7 +39,8 @@ gem 'spring',        group: :development
 group :test do
   gem 'rspec-rails'
   gem 'rspec-mocks'
-  gem 'webmock'
+  gem 'webmock', '~> 1.10'
+  #gem 'httplog'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'launchy'

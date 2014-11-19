@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'webmock/rspec'
 require 'capybara/rspec'
 
+Capybara.default_wait_time = 5
 WebMock.disable_net_connect!(:allow_localhost => true, :allow => "127.0.0.1")
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -46,19 +47,7 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
-  config.include WaitForAjax, type: :feature
+  #config.include WaitForAjax, type: :feature
+  config.include WebmockStubs
 
-  config.before(:each) do
-    stub_request(:post, "https://api.flickr.com/services/rest/").
-      with(:body => hash_including({"method"=>"flickr.photos.search"})).to_return(
-        :body => File.new(File.expand_path('../data-sample/flickr_search_a.json', __FILE__)),
-        :status => 200
-      )
-
-    stub_request(:post, "https://api.flickr.com/services/rest/").
-      with(:body => hash_including({"method"=>"flickr.photos.getInfo"})).to_return(
-        :body => File.new(File.expand_path('../data-sample/flickr_getinfo.json', __FILE__)),
-        :status => 200
-      )
-  end
 end

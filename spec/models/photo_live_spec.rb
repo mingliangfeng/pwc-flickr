@@ -3,11 +3,18 @@ require 'ostruct'
 
 RSpec.describe Photo do
 
-  context 'Search Flickr photos by hitting Flickr Service live' do
+  before(:each) do
+    WebMock.allow_net_connect!
+    @default_wait_time = Capybara.default_wait_time
+    Capybara.default_wait_time = 60
+  end
 
-    before(:each) do
-      WebMock.allow_net_connect!
-    end
+  after(:each) do
+    Capybara.default_wait_time = @default_wait_time
+    WebMock.disable_net_connect!(:allow_localhost => true, :allow => "127.0.0.1")
+  end
+
+  context 'Search Flickr photos by hitting Flickr Service live' do
 
     it 'General search should return a list of Photo instances' do
       search_result = Photo.search('a')
@@ -20,10 +27,6 @@ RSpec.describe Photo do
       expect(photo.title).to be_nil
       photo.fetch_info
       expect(photo.title).not_to be_nil
-    end
-
-    after(:each) do
-      WebMock.disable_net_connect!(:allow_localhost => true, :allow => "127.0.0.1")
     end
 
   end

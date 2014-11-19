@@ -22,7 +22,7 @@ window = @
       </div>
 
       <div className="search-results">
-        {"No photo found" unless @state.photos.count > 0}
+        {"No photo found" unless @state.photos.length > 0}
         {@state.photos.map (photo)->
           <window.Photo key={photo.id} urlBig={photo.url_big} urlThumbnail={photo.url_thumbnail} />
         }
