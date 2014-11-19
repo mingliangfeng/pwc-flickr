@@ -37,7 +37,7 @@ You'll need firefox installed to run the integration tests.
 ## TODOs
 1. <del>Change to async photo searching as the current one seems time consuming;</del>
 2. <del>Add integration test by using capybara;</del>
-3. refactor paginate.js.cjsx and fix bug when search term doesn't match anything (returns pagination with values 1,0)
+3. <del>refactor paginate.js.cjsx and fix bug when search term doesn't match anything (returns pagination with values 1,0)</del>
 4. can not bookmark a searched url
 5. more feature specs (test pagination, clicking on photo)
 6. Photo.search refactor to be more ruby-ish
