@@ -1,5 +1,9 @@
 class PhotosController < ApplicationController
 
+  def index
+    @query, @page = params[:query], params[:page]
+  end
+
   def search
     photos = []
     if params[:q].present?

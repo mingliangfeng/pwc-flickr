@@ -10,3 +10,16 @@
 </form><!-- /.search form -->
 
 <div class="search-results-wrapper"></div>
+
+<% content_for :assets_js do %>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      Backbone.history.start({pushState: true});
+      <% if @query.present? %>
+      window.searchPhotos("<%= @query %>", <%= @page.presence || 1 %>);
+      <% end %>
+		});
+
+  </script>
+<% end %>

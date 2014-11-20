@@ -49,7 +49,6 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
-  #config.include WaitForAjax, type: :feature
   config.include WebmockStubs
 
 end

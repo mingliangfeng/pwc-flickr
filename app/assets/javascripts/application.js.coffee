@@ -12,7 +12,11 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require underscore-min
+#= require backbone-min
+#= require jquery_ujs
 #= require lightbox
 #= require react
 #= require_tree ./components
+#= require router
 #= require photos

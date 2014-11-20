@@ -12,14 +12,6 @@ module WebmockStubs
       )
   end
 
-  def stub_search_empty
-    stub_request(:post, "https://api.flickr.com/services/rest/").
-      with(body: hash_including({"method"=>"flickr.photos.search"})).to_return(
-        body: { "photos" => { "page" => 1, "pages" => "0", "perpage" => 100, "total" => "0", "photo" => [] } }.to_json,
-        status: 200
-      )
-  end
-
   def stub_get_info
     json = read_json_file File.expand_path("../../data-sample/flickr_getinfo.json", __FILE__)
     stub_request(:post, "https://api.flickr.com/services/rest/").
