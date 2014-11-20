@@ -24,7 +24,7 @@ https://pwc-flickr.herokuapp.com
 This app is tested using RSpec. For testing model **Photo**, two sets of specs are provided:
 * **Mock specs**: Flickr API data will be served by local json files; this will speed up the testing during developing, and gives reliable results for verifying features. This is achieved by introducing [webmock](https://github.com/bblimke/webmock). For mock testing, the testing json data can be saved from [here](https://www.flickr.com/services/api/explore/). e.g. [flickr.photos.getInfo](https://www.flickr.com/services/api/explore/flickr.photos.getInfo).
 
-* **Live specs**: Flickr API request will hit real Flickr end point and fetch real data; these specs are time consuming, but should run before releasing to production server to make sure live search is working. Here is using Flickr search libraray [flickraw](https://github.com/hanklords/flickraw)
+* **Live specs**: Flickr API request will hit real Flickr end point and fetch real data; these specs are time consuming, but should run before releasing to production server to make sure live search is working. Here is using Flickr search libraray [flickraw](https://github.com/hanklords/flickraw). All features specs are live specs.
 
 ## Setups
 `git clone https://github.com/mingliangfeng/pwc-flickr.git` <br/> `cd pwc-flickr` <br/>
