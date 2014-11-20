@@ -1,6 +1,6 @@
 # Flickr Photo Search
 
-[![Build Status](https://travis-ci.org/mingliangfeng/pwc-flickr.png?branch=master)](https://travis-ci.org/mingliangfeng/pwc-flickr)
+[![Build Status](https://travis-ci.org/mingliangfeng/pwc-flickr.png?branch=master)](https://travis-ci.org/mingliangfeng/pwc-flickr) [![Coverage Status](https://img.shields.io/coveralls/mingliangfeng/pwc-flickr.svg)](https://coveralls.io/r/mingliangfeng/pwc-flickr?branch=master)
 
 https://pwc-flickr.herokuapp.com
 
