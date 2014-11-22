@@ -55,4 +55,19 @@ RSpec.describe "Photo Search", :type => :feature, js: true do
     expect(page).to have_selector('ul.pagination li.disabled a span', text: /2/)
   end
 
+  it "click photo and show enlarged photo" do
+    visit '/'
+
+    fill_in 'q', :with => 'test'
+    click_button 'search'
+
+    expect(page).to have_selector('.search-results a')
+
+    first_photo_anchor = first('.search-results a')
+    photo_url = first_photo_anchor[:href]
+    first_photo_anchor.click
+
+    expect(page).to have_selector("img[src='#{photo_url}']")
+  end
+
 end

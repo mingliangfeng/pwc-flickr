@@ -39,7 +39,7 @@ You'll need firefox installed to run the integration tests.
 2. <del>Add integration test by using capybara;</del>
 3. <del>refactor paginate.js.cjsx and fix bug when search term doesn't match anything (returns pagination with values 1,0)</del>
 4. <del>can not bookmark a searched url</del>
-5. more feature specs (test pagination, clicking on photo)
+5. <del>more feature specs (test pagination, clicking on photo)</del>
 6. Photo.search refactor to be more ruby-ish
 7. Enhance searching by adding **tag** search;
 8. Display more inforation for photo like description, tags, etc.
